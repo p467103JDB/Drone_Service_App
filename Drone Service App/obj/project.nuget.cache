@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "n3xxQnFUSwHY2MENCFiYbpRhDLEBIYGtKSaT/5bjsmeYBXVP6AQITskyo1KYdb3zoCF8dOhzjQ4gHHOXZmP4UQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\p467103\\source\\repos\\Drone Service App\\Drone Service App\\Drone Service App.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\p467103\\.nuget\\packages\\extended.wpf.toolkit\\4.6.0\\extended.wpf.toolkit.4.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}

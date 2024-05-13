@@ -1,15 +1,28 @@
-﻿<Window x:Class="Drone_Service_App.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Drone_Service_App"
-        xmlns:wpfx="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="Drone_Service_App.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="640" Width="1024">
     <Grid>
-        <Button Content="Add Drone" HorizontalAlignment="Left" Margin="32,437,0,0" VerticalAlignment="Top" Width="160" Height="32"/>
-        <wpfx:IntegerUpDown x:Name="ServiceTag" Value="100" FormatString="F" Margin="32,395,832,180" Minimum="100" Maximum="900" Increment="10" />
+
+
+
+        <GroupBox Header="Service Priority" Margin="32,319,832,208">
+            <StackPanel>
+                <RadioButton x:Name="ExpressButton" Content="Express" GroupName="RadioButtons" FontSize="16"/>
+                <RadioButton x:Name="RegularButton" Content="Regular" GroupName="RadioButtons" FontSize="16"/>
+            </StackPanel>
+
+        </GroupBox>
+
+
+
+        <Button x:Name="AddNewItem" Content="Add Drone" HorizontalAlignment="Left" Margin="32,437,0,0" VerticalAlignment="Top" Width="160" Height="32" Click="AddNewItem_Click"/>
+        <xctk:IntegerUpDown x:Name="ServiceTag" Value="100" FormatString="F" Margin="32,395,832,180" Minimum="100" Maximum="900" Increment="10" />
         <ListView x:Name="ServiceDroneReg" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="262,66,442,354" AutomationProperties.IsColumnHeader="True">
             <ListView.View>
                 <GridView>
@@ -30,15 +43,13 @@
         <TextBox x:Name="DroneModel" LostFocus="DroneModel_LostFocus" HorizontalAlignment="Left" Margin="32,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16"/>
         <TextBox x:Name="DroneModelWatermark" GotFocus="DroneModelWatermark_GotFocus" Text="Enter Drone Model"  HorizontalAlignment="Left" Margin="32,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16" Opacity="0.5"/>
         <TextBox x:Name="ServiceProblem" LostFocus="ServiceProblem_LostFocus" HorizontalAlignment="Left" Margin="32,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="160" FontSize="16"/>
-        <TextBox x:Name="ServiceProblemWatermark" GotFocus="ServiceProblemWatermark_GotFocus" Text="Enter Drone Model" HorizontalAlignment="Left" Margin="32,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="160" FontSize="16" Opacity="0.5"/>
+        <TextBox x:Name="ServiceProblemWatermark" GotFocus="ServiceProblemWatermark_GotFocus" Text="Service Description" HorizontalAlignment="Left" Margin="32,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="160" FontSize="16" Opacity="0.5"/>
         <TextBox x:Name="ServiceFee" LostFocus="ServiceFee_LostFocus" HorizontalAlignment="Left" Margin="32,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16"/>
         <TextBox x:Name="ServiceFeeWatermark" GotFocus="ServiceFeeWatermark_GotFocus"  Text="Enter Service Fee" HorizontalAlignment="Left" Margin="32,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16" Opacity="0.5" RenderTransformOrigin="0.528,1.338"/>
-
-        <RadioButton x:Name="ExpressButton" Content="Express" HorizontalAlignment="Left" VerticalAlignment="Top" GroupName="RadioButtons" Margin="32,336,0,0" FontSize="16"/>
-        <RadioButton x:Name="RegularButton" Content="Regular" HorizontalAlignment="Left" Margin="32,361,0,0" VerticalAlignment="Top" GroupName="RadioButtons" FontSize="16"/>
-        <Button Content="Add Drone" HorizontalAlignment="Left" Margin="342,275,0,0" VerticalAlignment="Top" Width="160" Height="32"/>
-        <Button Content="Add Drone" HorizontalAlignment="Left" Margin="342,523,0,0" VerticalAlignment="Top" Width="160" Height="32"/>
+        <Button HorizontalAlignment="Left" Margin="342,275,0,0" VerticalAlignment="Top" Width="160" Height="32" Content="Completed Service"/>
+        <Button Content="Completed Service" HorizontalAlignment="Left" Margin="342,523,0,0" VerticalAlignment="Top" Width="160" Height="32"/>
         <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="652,156,32,161"/>
+
 
 
     </Grid>
