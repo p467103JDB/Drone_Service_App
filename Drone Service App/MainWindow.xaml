@@ -8,10 +8,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="640" Width="1024">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="739*"/>
+            <ColumnDefinition Width="285*"/>
+        </Grid.ColumnDefinitions>
 
 
 
-        <GroupBox Header="Service Priority" Margin="32,319,832,208">
+        <GroupBox Header="Service Priority" Margin="32,319,547,208">
             <StackPanel>
                 <RadioButton x:Name="ExpressButton" Content="Express" GroupName="RadioButtons" FontSize="16"/>
                 <RadioButton x:Name="RegularButton" Content="Regular" GroupName="RadioButtons" FontSize="16"/>
@@ -22,16 +26,21 @@
 
 
         <Button x:Name="AddNewItem" Content="Add Drone" HorizontalAlignment="Left" Margin="32,437,0,0" VerticalAlignment="Top" Width="160" Height="32" Click="AddNewItem_Click"/>
-        <xctk:IntegerUpDown x:Name="ServiceTag" Value="100" FormatString="F" Margin="32,395,832,180" Minimum="100" Maximum="900" Increment="10" />
-        <ListView x:Name="ServiceDroneReg" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="262,66,442,354" AutomationProperties.IsColumnHeader="True">
+        <xctk:IntegerUpDown x:Name="ServiceTag" Value="100" FormatString="F" Margin="32,395,547,180" Minimum="100" Maximum="900" Increment="10" Text="100" AllowTextInput="False" />
+        <ListView x:Name="ServiceDroneReg" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="262,66,157,354" AutomationProperties.IsColumnHeader="True">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <StatusBar Margin="0,560,0,0"/>
-        <ListView x:Name="ServiceDroneExp" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="262,314,442,106" AutomationProperties.IsColumnHeader="True">
+        <StatusBar x:Name="StatusStrip" Margin="0,560,0,0" Grid.ColumnSpan="2">
+            <StatusBarItem>
+                 <TextBlock Text="{Binding SystemMessage}" />
+            </StatusBarItem>
+            <StatusBar/>
+        </StatusBar>
+        <ListView x:Name="ServiceDroneExp" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="262,314,157,106" AutomationProperties.IsColumnHeader="True">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
@@ -48,7 +57,9 @@
         <TextBox x:Name="ServiceFeeWatermark" GotFocus="ServiceFeeWatermark_GotFocus"  Text="Enter Service Fee" HorizontalAlignment="Left" Margin="32,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16" Opacity="0.5" RenderTransformOrigin="0.528,1.338"/>
         <Button HorizontalAlignment="Left" Margin="342,275,0,0" VerticalAlignment="Top" Width="160" Height="32" Content="Completed Service"/>
         <Button Content="Completed Service" HorizontalAlignment="Left" Margin="342,523,0,0" VerticalAlignment="Top" Width="160" Height="32"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="652,156,32,161"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="620,158,64,158" Grid.ColumnSpan="2"/>
+        <Button x:Name="RemoveSelectedItem" Content="Remove Item" HorizontalAlignment="Left" Margin="32,474,0,0" VerticalAlignment="Top" Width="160" Height="32" Click="RemoveSelectedItem_Click" />
+        <Button x:Name="ClearFields" Content="Clear" HorizontalAlignment="Left" Margin="32,511,0,0" VerticalAlignment="Top" Width="160" Height="32" Click="ClearFields_Click" ForceCursor="True" InputScope="CurrencyAmount" />
 
 
 

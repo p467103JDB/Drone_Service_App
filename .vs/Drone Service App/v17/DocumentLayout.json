@@ -1,32 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\",
+  "WorkspaceRootPath": "D:\\GitHub Clones\\Drone_Service_App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{19846B9E-6699-4684-925D-5F631071E388}|Drone Service App\\Drone Service App.csproj|c:\\users\\p467103\\documents\\github\\drone_service_app\\drone service app\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{19846B9E-6699-4684-925D-5F631071E388}|Drone Service App\\Drone Service App.csproj|solutionrelative:drone service app\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{2B7F12DF-FA53-44BB-94AE-323979934CE3}|Drone Service App\\Drone Service App.csproj|d:\\github clones\\drone_service_app\\drone service app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B7F12DF-FA53-44BB-94AE-323979934CE3}|Drone Service App\\Drone Service App.csproj|solutionrelative:drone service app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19846B9E-6699-4684-925D-5F631071E388}|Drone Service App\\Drone Service App.csproj|C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\drone service app\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
-      "RelativeMoniker": "D:0:0:{19846B9E-6699-4684-925D-5F631071E388}|Drone Service App\\Drone Service App.csproj|solutionrelative:drone service app\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+      "AbsoluteMoniker": "D:0:0:{2B7F12DF-FA53-44BB-94AE-323979934CE3}|Drone Service App\\Drone Service App.csproj|d:\\github clones\\drone_service_app\\drone service app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2B7F12DF-FA53-44BB-94AE-323979934CE3}|Drone Service App\\Drone Service App.csproj|solutionrelative:drone service app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19846B9E-6699-4684-925D-5F631071E388}|Drone Service App\\Drone Service App.csproj|C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\drone service app\\drone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19846B9E-6699-4684-925D-5F631071E388}|Drone Service App\\Drone Service App.csproj|solutionrelative:drone service app\\drone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2B7F12DF-FA53-44BB-94AE-323979934CE3}|Drone Service App\\Drone Service App.csproj|d:\\github clones\\drone_service_app\\drone service app\\drone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B7F12DF-FA53-44BB-94AE-323979934CE3}|Drone Service App\\Drone Service App.csproj|solutionrelative:drone service app\\drone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Drone Service App||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19846B9E-6699-4684-925D-5F631071E388}|Drone Service App\\Drone Service App.csproj|C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\drone service app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19846B9E-6699-4684-925D-5F631071E388}|Drone Service App\\Drone Service App.csproj|solutionrelative:drone service app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19846B9E-6699-4684-925D-5F631071E388}|Drone Service App\\Drone Service App.csproj|C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\drone service app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{19846B9E-6699-4684-925D-5F631071E388}|Drone Service App\\Drone Service App.csproj|solutionrelative:drone service app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19846B9E-6699-4684-925D-5F631071E388}|Drone Service App\\Drone Service App.csproj|c:\\users\\p467103\\documents\\github\\drone_service_app\\drone service app\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+      "AbsoluteMoniker": "D:0:0:{2B7F12DF-FA53-44BB-94AE-323979934CE3}|Drone Service App\\Drone Service App.csproj|d:\\github clones\\drone_service_app\\drone service app\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2B7F12DF-FA53-44BB-94AE-323979934CE3}|Drone Service App\\Drone Service App.csproj|solutionrelative:drone service app\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,78 +26,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\Drone Service App\\App.config",
-              "RelativeDocumentMoniker": "Drone Service App\\App.config",
-              "ToolTip": "C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\Drone Service App\\App.config",
-              "RelativeToolTip": "Drone Service App\\App.config",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-05-13T03:12:58.722Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Drone Service App",
-              "DocumentMoniker": "C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\Drone Service App\\Drone Service App.csproj",
-              "RelativeDocumentMoniker": "Drone Service App\\Drone Service App.csproj",
-              "ToolTip": "C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\Drone Service App\\Drone Service App.csproj",
-              "RelativeToolTip": "Drone Service App\\Drone Service App.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-05-13T03:12:43.338Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ClassDiagram1.cd",
-              "DocumentMoniker": "C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\Drone Service App\\ClassDiagram1.cd",
-              "RelativeDocumentMoniker": "Drone Service App\\ClassDiagram1.cd",
-              "ToolTip": "C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\Drone Service App\\ClassDiagram1.cd",
-              "RelativeToolTip": "Drone Service App\\ClassDiagram1.cd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
-              "WhenOpened": "2024-05-13T02:42:25.379Z",
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service App\\App.xaml",
+              "RelativeDocumentMoniker": "Drone Service App\\App.xaml",
+              "ToolTip": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service App\\App.xaml",
+              "RelativeToolTip": "Drone Service App\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-13T13:14:43.171Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Drone.cs",
-              "DocumentMoniker": "C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\Drone Service App\\Drone.cs",
+              "DocumentMoniker": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service App\\Drone.cs",
               "RelativeDocumentMoniker": "Drone Service App\\Drone.cs",
-              "ToolTip": "C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\Drone Service App\\Drone.cs",
+              "ToolTip": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service App\\Drone.cs",
               "RelativeToolTip": "Drone Service App\\Drone.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAmwEQAAAAAAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAswEQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T02:26:47.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-13T02:26:47.528Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\Drone Service App\\MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service App\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Drone Service App\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\Drone Service App\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service App\\MainWindow.xaml.cs",
               "RelativeToolTip": "Drone Service App\\MainWindow.xaml.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAAiwFQAAAAJAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAkwC0AAABWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-13T01:45:23.002Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\Drone Service App\\MainWindow.xaml",
+              "DocumentMoniker": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service App\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Drone Service App\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\p467103\\Documents\\GitHub\\Drone_Service_App\\Drone Service App\\MainWindow.xaml",
+              "ToolTip": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service App\\MainWindow.xaml",
               "RelativeToolTip": "Drone Service App\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-05-13T01:02:45.551Z",
