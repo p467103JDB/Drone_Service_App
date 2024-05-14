@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,63 +8,91 @@ using System.Threading.Tasks;
 namespace Drone_Service_App
 {
     
-    class Drone // 6.1
+    class Drone : INotifyPropertyChanged// 6.1
     {
-        private string? clientName;
-        private string? droneModel;
-        private string? serviceDescription;
-        private double serviceFee;
-        private int serviceTag;
+        //private string? clientName;
+        //private string? droneModel;
+        //private string? serviceDescription;
+        //private double serviceFee;
+        //private int serviceTag;
 
         // Getters and setters
-        public string? GetClientName() 
+
+        private string? clientName;
+        public string? ClientName
         {
-            return clientName;
+            get { return clientName; }
+            set
+            {
+                if (clientName!= value)
+                {
+                    clientName = value;
+                    OnPropertyChanged(nameof(ClientName));
+                }
+            }
         }
 
-        public void SetClientName(string _ClientName)
+        private string? droneModel;
+        public string? DroneModel
         {
-            clientName = _ClientName;
+            get { return droneModel; }
+            set
+            {
+                if (droneModel!= value)
+                {
+                    droneModel = value;
+                    OnPropertyChanged(nameof(DroneModel));
+                }
+            }
         }
 
-        public string? GetDroneModel()
+        private string? serviceDescription;
+        public string? ServiceDescription
         {
-            return droneModel;
+            get { return serviceDescription; }
+            set
+            {
+                if (serviceDescription!= value)
+                {
+                    serviceDescription = value;
+                    OnPropertyChanged(nameof(ServiceDescription));
+                }
+            }
         }
 
-        public void SetDroneModel(string _DroneModel)
+        private double serviceFee;
+        public double ServiceFee
         {
-            droneModel = _DroneModel;
+            get { return serviceFee; }
+            set
+            {
+                if (serviceFee!= value)
+                {
+                    serviceFee = value;
+                    OnPropertyChanged(nameof(ServiceFee));
+                }
+            }
         }
 
-        public string? GetServiceDescription()
+        private int serviceTag;
+        public int ServiceTag
         {
-            return serviceDescription;
+            get { return serviceTag; }
+            set
+            {
+                if (serviceTag!= value)
+                {
+                    serviceTag = value;
+                    OnPropertyChanged(nameof(ServiceTag));
+                }
+            }
         }
 
-        public void SetServiceDescription(string _ServiceDescription)
-        {
-            serviceDescription = _ServiceDescription;
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        public double GetServiceFee()
+        protected virtual void OnPropertyChanged(string propertyName)
         {
-            return serviceFee;
-        }
-
-        public void SetServiceFee(double _ServiceFee)
-        {
-            serviceFee = _ServiceFee;
-        }
-
-        public int GetServiceTag()
-        {
-            return serviceTag;
-        }
-
-        public void SetServiceTag(int _ServiceTag)
-        {
-            serviceTag = _ServiceTag;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

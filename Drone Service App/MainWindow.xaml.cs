@@ -9,7 +9,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel; // Why is this so tedious seriously, just for a fkn status strip.
-using System.Runtime.CompilerServices; // also this is needed????
+using System.Runtime.CompilerServices;
+using System.Collections.ObjectModel; // also this is needed????
 
 namespace Drone_Service_App
 {
@@ -20,44 +21,27 @@ namespace Drone_Service_App
 
 
 
-public partial class MainWindow : Window, INotifyPropertyChanged
+public partial class MainWindow : Window
     {
-        // Okay, the fact that it's this complicated to make a statusbar property change its text is just ridiculous, anyway....
-        #region Change Status Bar Message
 
-        private string _systemMessage;
-        public string SystemMessage
-        {
-            get { return _systemMessage; }
-            set
-            {
-                if (_systemMessage!= value)
-                {
-                    _systemMessage = value;
-                    OnPropertyChanged(nameof(SystemMessage));
-                }
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        #endregion
-
+        private ObservableCollection<Drone> ExpressServiceItems = new ObservableCollection<Drone>();
+        private ObservableCollection<Drone> RegularServiceItems = new ObservableCollection<Drone>();
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
+
+            DataContext = this; // necessary for a few components to work.
+
+            ServiceDroneExp.ItemsSource = null;  // JUST FUCKING WHY!??!?!?!? This fixes my issue of being unable to refresh the listview - https://stackoverflow.com/questions/20996288/wpf-listview-changing-itemssource-does-not-change-listview
+            ServiceDroneExp.ItemsSource = ExpressServiceItems;
+            ServiceDroneReg.ItemsSource = null;
+            ServiceDroneReg.ItemsSource= RegularServiceItems;
         }
+        public StatusUpdate Status { get; set; } = new StatusUpdate(); // Status bar message used directly from - https://stackoverflow.com/questions/53503794/c-sharp-wpf-update-status-bar-text-and-progress-from-another-window
 
         List<Drone> FinishedList = new List<Drone>();       // 6.2 
         Queue<Drone> RegularService = new Queue<Drone>();   // 6.3
         Queue<Drone> ExpressService = new Queue<Drone>();   // 6.4
-
-       
 
         // GUI features
         #region WATERMARK FEATURE
@@ -94,20 +78,20 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             DroneModel.Focus();
         }
 
-        private void ServiceProblem_LostFocus(object sender, RoutedEventArgs e)
+        private void ServiceDescription_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(ServiceProblem.Text))
+            if (string.IsNullOrEmpty(ServiceDescription.Text))
             {
-                ServiceProblem.Visibility = Visibility.Collapsed;
-                ServiceProblemWatermark.Visibility = Visibility.Visible;
+                ServiceDescription.Visibility = Visibility.Collapsed;
+                ServiceDescriptionWatermark.Visibility = Visibility.Visible;
             }
         }
 
-        private void ServiceProblemWatermark_GotFocus(object sender, RoutedEventArgs e)
+        private void ServiceDescriptionWatermark_GotFocus(object sender, RoutedEventArgs e)
         {
-            ServiceProblemWatermark.Visibility = Visibility.Collapsed;
-            ServiceProblem.Visibility = Visibility.Visible;
-            ServiceProblem.Focus();
+            ServiceDescriptionWatermark.Visibility = Visibility.Collapsed;
+            ServiceDescription.Visibility = Visibility.Visible;
+            ServiceDescription.Focus();
         }
 
         private void ServiceFee_LostFocus(object sender, RoutedEventArgs e)
@@ -129,55 +113,76 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         private void AddNewItem_Click(object sender, RoutedEventArgs e) // 6.5
         {
-
-            // 6.7 GetServicePriorty(); called inside this method
-
-            double serviceFee = DoubleValidator(); // convert text from textbox to an int
-            if (serviceFee < 0)
+            // Check if the criteria is valid to add.
+            if (string.IsNullOrEmpty(ClientName.Text))
+            {
+                ClientNameWatermark_GotFocus(sender, e);
+                this.Status.Message = "Client Name field must not be empty.";
+                return;
+            }
+            else if (string.IsNullOrEmpty(DroneModel.Text))
+            {
+                DroneModelWatermark_GotFocus(sender, e);
+                this.Status.Message = "Drone Model field must not be empty.";
+                return;     
+            }
+            else if (string.IsNullOrEmpty(ServiceDescription.Text))
+            {
+                ServiceDescriptionWatermark_GotFocus(sender, e);
+                this.Status.Message = "Service description field must noy be empty.";
+                return;
+            }
+            else if(DoubleValidator() <= 0)
             {
                 ServiceFee.Clear();
-                SystemMessage = "Not valid double value. Example:  '5.00'";
+                ServiceFeeWatermark_GotFocus(sender, e);
+                this.Status.Message = "Service fee must not be empty or zero. Example:  '5.00'";
+                return;
+            }
+            else if(GetServicePriority() < 0) // 6.7 <- GetServicePriorty()
+            {
+                this.Status.Message = "Please select a service type.";
                 return;
             }
 
-            if (GetServicePriority() == 1) // 6.6 express service cost +15%
+            // Need to do the Tag comparision so i dont get duplicates
+
+            Drone newDrone = new Drone();
+            newDrone.ClientName = ClientName.Text;
+            newDrone.DroneModel = DroneModel.Text;
+            newDrone.ServiceDescription = ServiceDescription.Text;
+            newDrone.ServiceFee = DoubleValidator();
+            newDrone.ServiceTag = int.Parse(ServiceTag.Text);
+
+            if (GetServicePriority() == 1) 
             {
-                serviceFee *= 1.15;
+                ExpressService.Enqueue(newDrone);
+                this.Status.Message = "Successfully added Entry to express queue.";
+            }
+            else
+            {
+                RegularService.Enqueue(newDrone);
+                this.Status.Message = "Successfully added Entry to regular queue.";
             }
 
             // 6.11 Increment service tag - before it is added to a queue
-
             UpdateDisplay();
         }
 
         private double DoubleValidator()
         {
-            bool validDouble = true;
             double dubs = -1.00;
-            
-            if (!string.IsNullOrEmpty(ServiceFee.Text)) // mitigate that risk
-            {
-                for (int i = 0; i < ServiceFee.Text.Length; i++)
-                {
-                    int c = ServiceFee.Text[i];
-                    if ((c < 48 || c > 57) && c != 46) // doesnt go over 9 in ascii value and is not a fullstop.
-                    {
-                        validDouble = false;
-                        break;
-                    }
-                }
 
-                if (validDouble)
+            if (!string.IsNullOrEmpty(ServiceFee.Text))
+            {
+                if (double.TryParse(ServiceFee.Text, out dubs)) // if it aint a double it's no bueno
                 {
-                    double.TryParse(ServiceFee.Text, out dubs);
-                    ClientName.Text = $"{dubs}";
+                    return dubs;
                 }
             }
             return dubs;
         }
 
-
-        
         private int GetServicePriority() // 6.7 
         {
             if (ExpressButton.IsChecked == true) // check to see if it's selected
@@ -194,11 +199,34 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             }
         }
 
-
         private void UpdateDisplay()
         {
-            // 6.8 Display method - express
-            // 6.9 Display method - regular
+            // "Why did you refresh both listviews in one method" - idgaf
+            ExpressServiceItems.Clear(); // Listview Express gets cleared and then populated
+            foreach (Drone item in ExpressService) 
+            {
+                Drone drone = new Drone
+                {
+                    ClientName = item.ClientName,
+                    DroneModel = item.DroneModel,
+                    ServiceTag = item.ServiceTag,
+                    ServiceFee = item.ServiceFee,
+                };
+                ExpressServiceItems.Add(drone);
+            }
+
+            RegularServiceItems.Clear(); // Listview regular gets cleared and then populated
+            foreach (Drone item in RegularService) 
+            {
+                Drone drone = new Drone
+                {
+                    ClientName = item.ClientName,
+                    DroneModel = item.DroneModel,
+                    ServiceTag = item.ServiceTag,
+                    ServiceFee = item.ServiceFee,
+                };
+                RegularServiceItems.Add(drone);
+            }
         }
 
         private void RemoveSelectedItem_Click(object sender, RoutedEventArgs e)
