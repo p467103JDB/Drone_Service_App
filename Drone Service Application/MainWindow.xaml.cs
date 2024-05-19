@@ -12,13 +12,8 @@ using System.Windows.Shapes;
 
 namespace Drone_Service_Application
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        private ObservableCollection<Drone> ExpressServiceItems = []; // Used as the source of the express service listview - [] is a cleaner of doing it like this = [new ObservableCollection<Drone>();
-        private ObservableCollection<Drone> RegularServiceItems = []; // used as the source of the regular service listview
         public MainWindow()
         {
             InitializeComponent();
@@ -31,9 +26,17 @@ namespace Drone_Service_Application
             ServiceDroneReg.ItemsSource= RegularServiceItems;
         }
         public StatusUpdate Status { get; set; } = new StatusUpdate(); // Status bar message used directly from - https://stackoverflow.com/questions/53503794/c-sharp-wpf-update-status-bar-text-and-progress-from-another-window
-        List<Drone> FinishedList = new List<Drone>();       // 6.2 Create list for finished items
-        Queue<Drone> RegularService = new Queue<Drone>();   // 6.3 Create queue for Regular service
-        Queue<Drone> ExpressService = new Queue<Drone>();   // 6.4 Create queue for Express service
+        private ObservableCollection<Drone> ExpressServiceItems = []; // Used as the source of the express service listview - [] is a cleaner of doing it like this = [new ObservableCollection<Drone>();
+        private ObservableCollection<Drone> RegularServiceItems = []; // used as the source of the regular service listview
+
+        // 6.2 Create list for finished items
+        List<Drone> FinishedList = new List<Drone>();       
+       
+        // 6.3 Create queue for Regular service
+        Queue<Drone> RegularService = new Queue<Drone>();  
+        
+        // 6.4 Create queue for Express service
+        Queue<Drone> ExpressService = new Queue<Drone>();  
 
         // GUI features
         #region WATERMARK FEATURE
@@ -383,6 +386,5 @@ namespace Drone_Service_Application
             ServiceFee_LostFocus(sender, e);
         }
 
-        // 6.18 Make sure code readable
     }
 }

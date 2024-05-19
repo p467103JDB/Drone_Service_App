@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Drone Service Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8957c6f905038223172aec9ad02a7e985d894446")]
 [assembly: System.Reflection.AssemblyProductAttribute("Drone Service Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Drone Service Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

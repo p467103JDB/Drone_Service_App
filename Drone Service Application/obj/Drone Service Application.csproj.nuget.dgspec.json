@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Cert IV Programming\\Drone Service Application\\Drone Service Application\\Drone Service Application.csproj": {}
+    "D:\\GitHub Clones\\Drone_Service_App\\Drone Service Application\\Drone Service Application.csproj": {}
   },
   "projects": {
-    "D:\\Cert IV Programming\\Drone Service Application\\Drone Service Application\\Drone Service Application.csproj": {
+    "D:\\GitHub Clones\\Drone_Service_App\\Drone Service Application\\Drone Service Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Cert IV Programming\\Drone Service Application\\Drone Service Application\\Drone Service Application.csproj",
+        "projectUniqueName": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service Application\\Drone Service Application.csproj",
         "projectName": "Drone Service Application",
-        "projectPath": "D:\\Cert IV Programming\\Drone Service Application\\Drone Service Application\\Drone Service Application.csproj",
+        "projectPath": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service Application\\Drone Service Application.csproj",
         "packagesPath": "C:\\Users\\jackd\\.nuget\\packages\\",
-        "outputPath": "D:\\Cert IV Programming\\Drone Service Application\\Drone Service Application\\obj\\",
+        "outputPath": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
