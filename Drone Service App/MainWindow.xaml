@@ -7,15 +7,11 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="Drone_Service_App.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="640" Width="1024">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="739*"/>
-            <ColumnDefinition Width="285*"/>
-        </Grid.ColumnDefinitions>
+    <Grid Background="#FFE9EDED">
 
 
 
-        <GroupBox Header="Service Priority" Margin="32,319,547,208">
+        <GroupBox Header="Service Priority" Margin="32,319,832,208">
             <StackPanel>
                 <RadioButton x:Name="ExpressButton" Content="Express" GroupName="RadioButtons" FontSize="16"/>
                 <RadioButton x:Name="RegularButton" Content="Regular" GroupName="RadioButtons" FontSize="16"/>
@@ -26,55 +22,73 @@
 
 
         <Button x:Name="AddNewItem" Content="Add Drone" HorizontalAlignment="Left" Margin="32,437,0,0" VerticalAlignment="Top" Width="160" Height="32" Click="AddNewItem_Click"/>
-        <xctk:IntegerUpDown x:Name="ServiceTag" Value="100" Margin="32,395,547,180" Minimum="100" Maximum="900" Increment="10" Text="100" AllowTextInput="False" />
-        <ListView x:Name="ServiceDroneReg" ItemsSource="{Binding RegularServiceItems}" Margin="262,66,157,354" AutomationProperties.IsColumnHeader="True" HorizontalAlignment="Center">
+
+
+        <xctk:IntegerUpDown x:Name="ServiceTag"  Value="100" Margin="32,395,832,180" Minimum="100" Maximum="900" Increment="10" Text="100" AutoSelectBehavior="OnFocus" DefaultValue="100" DisplayDefaultValueOnEmptyText="True" AllowTextInput="False" IsManipulationEnabled="True"/>
+        
+        
+        
+        
+        
+        
+        <ListView x:Name="ServiceDroneReg" ItemsSource="{Binding RegularServiceItems}" Margin="288,62,0,358" AutomationProperties.IsColumnHeader="True" HorizontalAlignment="Left" SelectionChanged="ServiceDroneReg_SelectionChanged" Width="312">
             <ListView.View>
                 <GridView>
-                    <GridView.Columns>
-                        <GridViewColumn Header="Client Name" DisplayMemberBinding="{Binding ClientName}"/>
-                        <GridViewColumn Header="Drone Model" DisplayMemberBinding="{Binding DroneModel}"/>
-                        <GridViewColumn Header="Service Tag" DisplayMemberBinding="{Binding ServiceTag}"/>
-                        <GridViewColumn Header="Service Fee" DisplayMemberBinding="{Binding ServiceFee}"/>
-                    </GridView.Columns>
+                    <GridViewColumn Header="Client Name" DisplayMemberBinding="{Binding ClientName}"/>
+                    <GridViewColumn Header="Drone Model" DisplayMemberBinding="{Binding DroneModel}"/>
+                    <GridViewColumn Header="Service Tag" DisplayMemberBinding="{Binding ServiceTag}"/>
+                    <GridViewColumn Header="Service Fee" DisplayMemberBinding="{Binding ServiceFee}"/>
                 </GridView>
             </ListView.View>
         </ListView>
         <StatusBar x:Name="StatusStrip" Margin="0,560,0,0" Grid.ColumnSpan="2">
             <StatusBarItem>
-                <TextBlock Text="{Binding Status.Message, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, NotifyOnSourceUpdated=True}"/>
+                <TextBlock Text="{Binding Status.Message, NotifyOnSourceUpdated=True, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"/>
             </StatusBarItem>
             <StatusBar/>
         </StatusBar>
-        <ListView x:Name="ServiceDroneExp" ItemsSource="{Binding ExpressServiceItems}" Margin="262,314,157,106" AutomationProperties.IsColumnHeader="True" HorizontalAlignment="Center">
+        <ListView x:Name="ServiceDroneExp" ItemsSource="{Binding ExpressServiceItems}" Margin="288,312,0,108" AutomationProperties.IsColumnHeader="True" HorizontalAlignment="Left" SelectionChanged="ServiceDroneExp_SelectionChanged" Width="312">
             <ListView.View>
                 <GridView>
-                    <GridView.Columns>
-                        <GridViewColumn Header="Client Name" DisplayMemberBinding="{Binding ClientName}"/>
-                        <GridViewColumn Header="Drone Model" DisplayMemberBinding="{Binding DroneModel}"/>
-                        <GridViewColumn Header="Service Tag" DisplayMemberBinding="{Binding ServiceTag}"/>
-                        <GridViewColumn Header="Service Fee" DisplayMemberBinding="{Binding ServiceFee}"/>
-                    </GridView.Columns>
+                    <GridViewColumn Header="Client Name" DisplayMemberBinding="{Binding ClientName}"/>
+                    <GridViewColumn Header="Drone Model" DisplayMemberBinding="{Binding DroneModel}"/>
+                    <GridViewColumn Header="Service Tag" DisplayMemberBinding="{Binding ServiceTag}"/>
+                    <GridViewColumn Header="Service Fee" DisplayMemberBinding="{Binding ServiceFee}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox x:Name="ClientName" LostFocus="ClientName_LostFocus" HorizontalAlignment="Left" Margin="32,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16"/>
+        <TextBox x:Name="ClientName" TextChanged="ClientNameWatermark_GotFocus" LostFocus="ClientName_LostFocus" HorizontalAlignment="Left" Margin="32,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16"/>
         <TextBox x:Name="ClientNameWatermark" GotFocus="ClientNameWatermark_GotFocus" Text="Enter Client Name" HorizontalAlignment="Left" Margin="32,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16" Opacity="0.5"/>
-        
-        <TextBox x:Name="DroneModel" LostFocus="DroneModel_LostFocus" HorizontalAlignment="Left" Margin="32,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16"/>
+
+        <TextBox x:Name="DroneModel" TextChanged="DroneModelWatermark_GotFocus" LostFocus="DroneModel_LostFocus" HorizontalAlignment="Left" Margin="32,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16"/>
         <TextBox x:Name="DroneModelWatermark" GotFocus="DroneModelWatermark_GotFocus" Text="Enter Drone Model"  HorizontalAlignment="Left" Margin="32,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16" Opacity="0.5"/>
-        
-        <TextBox x:Name="ServiceDescription" LostFocus="ServiceDescription_LostFocus" HorizontalAlignment="Left" Margin="32,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="160" FontSize="16"/>
+
+        <TextBox x:Name="ServiceDescription" TextChanged="ServiceDescriptionWatermark_GotFocus"  LostFocus="ServiceDescription_LostFocus" HorizontalAlignment="Left" Margin="32,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="160" FontSize="16"/>
         <TextBox x:Name="ServiceDescriptionWatermark" GotFocus="ServiceDescriptionWatermark_GotFocus" Text="Service Description" HorizontalAlignment="Left" Margin="32,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="160" FontSize="16" Opacity="0.5"/>
-        
-        <TextBox x:Name="ServiceFee" LostFocus="ServiceFee_LostFocus" HorizontalAlignment="Left" Margin="32,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16"/>
+
+        <TextBox x:Name="ServiceFee" TextChanged="ServiceFeeWatermark_GotFocus" LostFocus="ServiceFee_LostFocus" HorizontalAlignment="Left" Margin="32,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16" MaxHeight="23.28" />
         <TextBox x:Name="ServiceFeeWatermark" GotFocus="ServiceFeeWatermark_GotFocus"  Text="Enter Service Fee" HorizontalAlignment="Left" Margin="32,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16" Opacity="0.5" RenderTransformOrigin="0.528,1.338"/>
-        
-        <Button HorizontalAlignment="Left" Margin="342,245,0,0" VerticalAlignment="Top" Width="160" Height="32" Content="Completed Service"/>
-        <Button Content="Completed Service" HorizontalAlignment="Left" Margin="342,495,0,0" VerticalAlignment="Top" Width="160" Height="32"/>
-        
-        <ListBox x:Name="ListBoxFinished" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="620,158,64,158" Grid.ColumnSpan="2"/>
-        
-        <Button x:Name="RemoveSelectedItem" Content="Remove Item" HorizontalAlignment="Left" Margin="32,474,0,0" VerticalAlignment="Top" Width="160" Height="32" Click="RemoveSelectedItem_Click" />
-        <Button x:Name="ClearFields" Content="Clear" HorizontalAlignment="Left" Margin="32,511,0,0" VerticalAlignment="Top" Width="160" Height="32" Click="ClearFields_Click" ForceCursor="True" InputScope="CurrencyAmount" />
+
+        <Button x:Name="DequeueRegular" HorizontalAlignment="Left" Margin="364,243,0,0" VerticalAlignment="Top" Width="160" Height="32" Content="Completed" Click="DequeueRegular_Click"/>
+
+        <ListBox x:Name="ListBoxFinished" Margin="680,64,28,106" ItemsSource="{Binding FinishedList}" MouseDoubleClick="ListBoxFinished_MouseDoubleClick">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding ClientName}" MinWidth="148"/>
+                        <TextBlock Text="{Binding ServiceFee}" MinWidth="148"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Button x:Name="DequeueExpress" Content="Completed" HorizontalAlignment="Left" Margin="364,492,0,0" VerticalAlignment="Top" Width="160" Height="32" Click="DequeueExpress_Click" />
+        <Button x:Name="ClearFields" Content="Clear" HorizontalAlignment="Left" Margin="32,474,0,0" VerticalAlignment="Top" Width="160" Height="32" Click="ClearFields_Click" ForceCursor="True" InputScope="CurrencyAmount" />
+        <Label Content="Drone Details:" HorizontalAlignment="Left" Margin="32,24,0,0" VerticalAlignment="Top" Width="160" FontSize="20" FontWeight="Bold" Foreground="#FF3D847F"/>
+        <Label Content="Finished List" HorizontalAlignment="Left" Margin="772,24,0,0" VerticalAlignment="Top" Width="128" FontSize="20" FontWeight="Bold" Foreground="#FF3D847F"/>
+        <Label Content="Regular Service Queue" HorizontalAlignment="Left" Margin="332,25,0,0" VerticalAlignment="Top" Width="224" FontSize="20" FontWeight="Bold" Foreground="#FF3D847F"/>
+        <Label Content="Express Service Queue" HorizontalAlignment="Left" Margin="332,275,0,0" VerticalAlignment="Top" Width="224" FontSize="20" FontWeight="Bold" Foreground="#FF3D847F"/>
+
+
     </Grid>
 </Window>

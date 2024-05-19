@@ -10,14 +10,7 @@ namespace Drone_Service_App
     
     class Drone : INotifyPropertyChanged// 6.1
     {
-        //private string? clientName;
-        //private string? droneModel;
-        //private string? serviceDescription;
-        //private double serviceFee;
-        //private int serviceTag;
-
         // Getters and setters
-
         private string? clientName;
         public string? ClientName
         {
