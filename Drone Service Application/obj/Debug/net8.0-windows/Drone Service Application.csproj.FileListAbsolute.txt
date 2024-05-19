@@ -1,0 +1,39 @@
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\Drone Service Application.exe
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\Drone Service Application.deps.json
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\Drone Service Application.runtimeconfig.json
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\Drone Service Application.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\Drone Service Application.pdb
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.NET5.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Aero.NET5.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Metro.NET5.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.VS2010.NET5.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\Xceed.Wpf.Toolkit.NET5.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\cs-CZ\Xceed.Wpf.AvalonDock.NET5.resources.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\de\Xceed.Wpf.AvalonDock.NET5.resources.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\es\Xceed.Wpf.AvalonDock.NET5.resources.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\fr\Xceed.Wpf.AvalonDock.NET5.resources.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\hu\Xceed.Wpf.AvalonDock.NET5.resources.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\it\Xceed.Wpf.AvalonDock.NET5.resources.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\ja-JP\Xceed.Wpf.AvalonDock.NET5.resources.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\pt-BR\Xceed.Wpf.AvalonDock.NET5.resources.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\ro\Xceed.Wpf.AvalonDock.NET5.resources.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\ru\Xceed.Wpf.AvalonDock.NET5.resources.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\sv\Xceed.Wpf.AvalonDock.NET5.resources.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\bin\Debug\net8.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.NET5.resources.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\Drone Service Application.csproj.AssemblyReference.cache
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\App.g.cs
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\Drone Service Application_MarkupCompile.cache
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\Drone Service Application_MarkupCompile.lref
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\MainWindow.baml
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\Drone Service Application.g.resources
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\Drone Service Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\Drone Service Application.AssemblyInfoInputs.cache
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\Drone Service Application.AssemblyInfo.cs
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\Drone Service Application.csproj.CoreCompileInputs.cache
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\Drone Se.2F180289.Up2Date
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\Drone Service Application.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\refint\Drone Service Application.dll
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\Drone Service Application.pdb
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\Drone Service Application.genruntimeconfig.cache
+D:\Cert IV Programming\Drone Service Application\Drone Service Application\obj\Debug\net8.0-windows\ref\Drone Service Application.dll
