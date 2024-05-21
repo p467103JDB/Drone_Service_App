@@ -19,15 +19,8 @@ namespace Drone_Service_Application
             InitializeComponent();
 
             DataContext = this;
-
-            ServiceDroneExp.ItemsSource = null;  // This fixes my issue of being unable to refresh the listview - https://stackoverflow.com/questions/20996288/wpf-listview-changing-itemssource-does-not-change-listview
-            ServiceDroneExp.ItemsSource = ExpressServiceItems;
-            ServiceDroneReg.ItemsSource = null;
-            ServiceDroneReg.ItemsSource= RegularServiceItems;
         }
         public StatusUpdate Status { get; set; } = new StatusUpdate(); // Status bar message used directly from - https://stackoverflow.com/questions/53503794/c-sharp-wpf-update-status-bar-text-and-progress-from-another-window
-        private ObservableCollection<Drone> ExpressServiceItems = []; // Used as the source of the express service listview - [] is a cleaner of doing it like this = [new ObservableCollection<Drone>();
-        private ObservableCollection<Drone> RegularServiceItems = []; // used as the source of the regular service listview
 
         // 6.2 Create list for finished items
         List<Drone> FinishedList = new List<Drone>();       
@@ -140,6 +133,7 @@ namespace Drone_Service_Application
                 this.Status.Message = "Please select a service type.";
                 return;
             }
+
             Drone newDrone = new Drone
             {
                 ClientName = ClientName.Text,
@@ -153,14 +147,15 @@ namespace Drone_Service_Application
             {
                 ExpressService.Enqueue(newDrone);
                 this.Status.Message = "Successfully added entry to Express queue.";
+                updateDisplayExpress();
             }
             else
             {
                 RegularService.Enqueue(newDrone);
                 this.Status.Message = "Successfully added entry to Regular queue.";
+                updateDisplayRegular();
             }
             ClearFields_Click(sender, e);
-            UpdateDisplay();
         }
 
         // 6.7 Returns the value of the priority radio group. This method must be called inside the “AddNewItem”
@@ -180,37 +175,41 @@ namespace Drone_Service_Application
             }
         }
 
-        // 6.8 + 6.9  Displays all elements from all lists including the finished list. - i can easily separate these but i dont see a point if im being honest.
-        private void UpdateDisplay()
+        // 6.8 Update display express
+        private void updateDisplayExpress()
         {
-            // do i really want to make 3 different methods for this...? nahhhhh
-            ExpressServiceItems.Clear(); // Listview Express gets cleared and then populated
+            ServiceDroneExp.Items.Clear(); // Listview gets cleared and then populated
             foreach (Drone item in ExpressService)
             {
-                Drone drone = new Drone
+                ServiceDroneExp.Items.Add(new // add new entry
                 {
-                    ClientName = item.ClientName,
-                    DroneModel = item.DroneModel,
-                    ServiceTag = item.ServiceTag,
-                    ServiceFee = item.ServiceFee,
-                };
-                ExpressServiceItems.Add(drone);
+                    item.ClientName, // formerly ClientName = item.ClientName,
+                    item.DroneModel,
+                    item.ServiceTag,
+                    item.ServiceFee,
+                });
             }
+        }
 
-            RegularServiceItems.Clear(); // Listview regular gets cleared and then populated
+        // 6.9 update display regular
+        private void updateDisplayRegular()
+        {
+            ServiceDroneReg.Items.Clear(); // Listview gets cleared and then populated
             foreach (Drone item in RegularService)
             {
-                Drone drone = new Drone
+                ServiceDroneReg.Items.Add(new // add new entry
                 {
-                    ClientName = item.ClientName,
-                    DroneModel = item.DroneModel,
-                    ServiceTag = item.ServiceTag,
-                    ServiceFee = item.ServiceFee,
-                };
-                RegularServiceItems.Add(drone);
+                    item.ClientName,
+                    item.DroneModel,
+                    item.ServiceTag,
+                    item.ServiceFee,
+                });
             }
+        }
 
-            ListBoxFinished.Items.Clear(); // Listbox gets cleared and then populated... im sure theres a way to make named columns...
+        private void UpdateDisplayFinished()
+        {
+            ListBoxFinished.Items.Clear(); // Listbox gets cleared and then populated
             foreach (Drone item in FinishedList)
             {
                 Drone drone = new Drone
@@ -222,7 +221,7 @@ namespace Drone_Service_Application
             }
         }
 
-        // 6.10 Force service fee to only accept double values with 2 decimal points - 6.6 is also covered here.
+        // 6.10 Force service fee to only accept double values with 2 decimal points - 6.6 is also covered here. // use regex
         private double DoubleValidator()
         {
             double dubs = -1.00;
@@ -258,13 +257,13 @@ namespace Drone_Service_Application
         // 6.12 Click method - displays express service item
         private void ServiceDroneExp_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ExpressButton.IsChecked = true;
-            Queue<Drone> tempQueue = new Queue<Drone>(ExpressService);
+
             if (ServiceDroneExp.SelectedItem != null)
             {
                 RevealTextFields();
                 int selectedRow = ServiceDroneExp.SelectedIndex;
-                DisplayEntryContents(selectedRow, tempQueue);
+                ExpressButton.IsChecked = true;
+                DisplayEntryContents(selectedRow, ExpressService);
             }
             ServiceDroneExp.SelectedItem = null;
         }
@@ -272,14 +271,13 @@ namespace Drone_Service_Application
         // 6.13 Click method - displays regular service item
         private void ServiceDroneReg_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            RegularButton.IsChecked = true;
-            Queue<Drone> tempQueue = new Queue<Drone>(RegularService);
 
             if (ServiceDroneReg.SelectedItem != null)
             {
                 RevealTextFields();
                 int selectedRow = ServiceDroneReg.SelectedIndex;
-                DisplayEntryContents(selectedRow, tempQueue);
+                RegularButton.IsChecked = true;
+                DisplayEntryContents(selectedRow, RegularService);
             }
             ServiceDroneReg.SelectedItem = null;
         }
@@ -296,7 +294,6 @@ namespace Drone_Service_Application
                     ServiceDescription.Text = item.ServiceDescription;
                     ServiceFee.Text = item.ServiceFee.ToString();
                     ServiceTag.Value = item.ServiceTag;
-
                     break;
                 }
                 index++;
@@ -323,7 +320,8 @@ namespace Drone_Service_Application
                 Drone nuDrone = RegularService.Peek();
                 FinishedList.Add(nuDrone);
                 RegularService.Dequeue();
-                UpdateDisplay();
+                UpdateDisplayFinished();
+                updateDisplayRegular();
                 ClearFields_Click(sender, e);
                 this.Status.Message = "Entry Completed. Entry removed from regular queue.";
             }
@@ -341,7 +339,8 @@ namespace Drone_Service_Application
                 Drone nuDrone = ExpressService.Peek();
                 FinishedList.Add(nuDrone);
                 ExpressService.Dequeue();
-                UpdateDisplay();
+                UpdateDisplayFinished();
+                updateDisplayExpress();
                 ClearFields_Click(sender, e);
                 this.Status.Message = "Entry Completed. Entry removed from express queue.";
             }
@@ -359,14 +358,13 @@ namespace Drone_Service_Application
                 int selected = ListBoxFinished.SelectedIndex;
                 ListBoxFinished.Items.Remove(selected);
                 FinishedList.RemoveAt(selected);
-                UpdateDisplay();
+                UpdateDisplayFinished();
                 this.Status.Message = $"Successfully removed selected item at index: {selected} ";
             }
             else
             {
                 this.Status.Message = "Cannot remove items that do not exist. ";
             }
-
         }
 
         // 6.17 Clear all method - text box fields
@@ -385,6 +383,5 @@ namespace Drone_Service_Application
             ServiceDescription_LostFocus(sender, e);
             ServiceFee_LostFocus(sender, e);
         }
-
     }
 }

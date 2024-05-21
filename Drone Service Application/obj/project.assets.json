@@ -123,11 +123,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service Application\\Drone Service Application.csproj",
+      "projectUniqueName": "C:\\Users\\jackd\\Desktop\\Drone_Service_App-main\\Drone Service Application\\Drone Service Application.csproj",
       "projectName": "Drone Service Application",
-      "projectPath": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service Application\\Drone Service Application.csproj",
+      "projectPath": "C:\\Users\\jackd\\Desktop\\Drone_Service_App-main\\Drone Service Application\\Drone Service Application.csproj",
       "packagesPath": "C:\\Users\\jackd\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service Application\\obj\\",
+      "outputPath": "C:\\Users\\jackd\\Desktop\\Drone_Service_App-main\\Drone Service Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
