@@ -22,10 +22,8 @@ namespace Drone_Service_Application
 
         // 6.2 Create list for finished items
         List<Drone> FinishedList = new List<Drone>();       
-       
         // 6.3 Create queue for Regular service
         Queue<Drone> RegularService = new Queue<Drone>();  
-        
         // 6.4 Create queue for Express service
         Queue<Drone> ExpressService = new Queue<Drone>();  
 
@@ -94,6 +92,20 @@ namespace Drone_Service_Application
             ServiceFeeWatermark.Visibility = Visibility.Collapsed;
             ServiceFee.Visibility = Visibility.Visible;
             ServiceFee.Focus();
+        }
+        #endregion
+
+        #region DISPLAY ALL TEXT BOXES
+        private void RevealTextFields() // all fields should be revealed in this case
+        {
+            ClientNameWatermark.Visibility = Visibility.Collapsed;
+            ClientName.Visibility = Visibility.Visible;
+            DroneModelWatermark.Visibility = Visibility.Collapsed;
+            DroneModel.Visibility = Visibility.Visible;
+            ServiceDescriptionWatermark.Visibility = Visibility.Collapsed;
+            ServiceDescription.Visibility = Visibility.Visible;
+            ServiceFeeWatermark.Visibility = Visibility.Collapsed;
+            ServiceFee.Visibility = Visibility.Visible;
         }
         #endregion
 
@@ -219,7 +231,7 @@ namespace Drone_Service_Application
             }
         }
 
-        // 6.10 Force service fee to only accept double values with 2 decimal points - 6.6 is also covered here. // use regex next time <------------------------
+        // 6.10 Force service fee to only accept double values with 2 decimal points - 6.6 is also covered here. // use regex next time  <------------------------
         private double DoubleValidator()
         {
             double dubs = -1.00;
@@ -255,7 +267,6 @@ namespace Drone_Service_Application
         // 6.12 Click method - displays express service item
         private void ServiceDroneExp_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             if (ServiceDroneExp.SelectedItem != null)
             {
                 RevealTextFields();
@@ -269,7 +280,6 @@ namespace Drone_Service_Application
         // 6.13 Click method - displays regular service item
         private void ServiceDroneReg_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             if (ServiceDroneReg.SelectedItem != null)
             {
                 RevealTextFields();
@@ -296,18 +306,6 @@ namespace Drone_Service_Application
                 }
                 index++;
             }
-        }
-
-        private void RevealTextFields() // all fields should be revealed in this case
-        {
-            ClientNameWatermark.Visibility = Visibility.Collapsed;
-            ClientName.Visibility = Visibility.Visible;
-            DroneModelWatermark.Visibility = Visibility.Collapsed;
-            DroneModel.Visibility = Visibility.Visible;
-            ServiceDescriptionWatermark.Visibility = Visibility.Collapsed;
-            ServiceDescription.Visibility = Visibility.Visible;
-            ServiceFeeWatermark.Visibility = Visibility.Collapsed;
-            ServiceFee.Visibility = Visibility.Visible;
         }
 
         // 6.14 Dequeue / Remove item method - express
@@ -374,7 +372,6 @@ namespace Drone_Service_Application
             ServiceFee.Clear();
             ExpressButton.IsChecked = false;
             RegularButton.IsChecked = false;
-            //ServiceTag.Text = "100"; // it was this all along...
 
             ClientName_LostFocus(sender, e);
             DroneModel_LostFocus(sender, e);
