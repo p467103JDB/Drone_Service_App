@@ -20,7 +20,6 @@ namespace Drone_Service_Application
 
             DataContext = this;
         }
-        public StatusUpdate Status { get; set; } = new StatusUpdate(); // Status bar message used directly from - https://stackoverflow.com/questions/53503794/c-sharp-wpf-update-status-bar-text-and-progress-from-another-window
 
         // 6.2 Create list for finished items
         List<Drone> FinishedList = new List<Drone>();       
@@ -106,31 +105,31 @@ namespace Drone_Service_Application
             if (string.IsNullOrEmpty(ClientName.Text))
             {
                 ClientNameWatermark_GotFocus(sender, e);
-                this.Status.Message = "Client Name field must not be empty.";
+                StatusMessage.Text = "Client Name field must not be empty.";
                 return;
             }
             else if (string.IsNullOrEmpty(DroneModel.Text))
             {
                 DroneModelWatermark_GotFocus(sender, e);
-                this.Status.Message = "Drone Model field must not be empty.";
+                StatusMessage.Text = "Drone Model field must not be empty.";
                 return;
             }
             else if (string.IsNullOrEmpty(ServiceDescription.Text))
             {
                 ServiceDescriptionWatermark_GotFocus(sender, e);
-                this.Status.Message = "Service description field must noy be empty.";
+                StatusMessage.Text = "Service description field must noy be empty.";
                 return;
             }
             else if (DoubleValidator() <= 0)
             {
                 ServiceFee.Clear();
                 ServiceFeeWatermark_GotFocus(sender, e);
-                this.Status.Message = "Service fee must not be empty or zero. Example:  '5.00'";
+                StatusMessage.Text = "Service fee must not be empty or zero. Example:  '5.00'";
                 return;
             }
             else if (GetServicePriority() < 0) // 6.7 <- GetServicePriorty()
             {
-                this.Status.Message = "Please select a service type.";
+                StatusMessage.Text = "Please select a service type.";
                 return;
             }
 
@@ -146,13 +145,13 @@ namespace Drone_Service_Application
             if (GetServicePriority() == 1)
             {
                 ExpressService.Enqueue(newDrone);
-                this.Status.Message = "Successfully added entry to Express queue.";
+                StatusMessage.Text = "Successfully added entry to Express queue.";
                 updateDisplayExpress();
             }
             else
             {
                 RegularService.Enqueue(newDrone);
-                this.Status.Message = "Successfully added entry to Regular queue.";
+                StatusMessage.Text = "Successfully added entry to Regular queue.";
                 updateDisplayRegular();
             }
             ClearFields_Click(sender, e);
@@ -323,11 +322,11 @@ namespace Drone_Service_Application
                 UpdateDisplayFinished();
                 updateDisplayRegular();
                 ClearFields_Click(sender, e);
-                this.Status.Message = "Entry Completed. Entry removed from regular queue.";
+                StatusMessage.Text = "Entry Completed. Entry removed from regular queue.";
             }
             else
             {
-                this.Status.Message = "List is empty. Please add an entry to the list to remove.";
+                StatusMessage.Text = "List is empty. Please add an entry to the list to remove.";
             }
         }
 
@@ -342,11 +341,11 @@ namespace Drone_Service_Application
                 UpdateDisplayFinished();
                 updateDisplayExpress();
                 ClearFields_Click(sender, e);
-                this.Status.Message = "Entry Completed. Entry removed from express queue.";
+                StatusMessage.Text = "Entry Completed. Entry removed from express queue.";
             }
             else
             {
-                this.Status.Message = "List is empty. Please add an entry to the list to remove.";
+                StatusMessage.Text = "List is empty. Please add an entry to the list to remove.";
             }
         }
 
@@ -359,11 +358,11 @@ namespace Drone_Service_Application
                 ListBoxFinished.Items.Remove(selected);
                 FinishedList.RemoveAt(selected);
                 UpdateDisplayFinished();
-                this.Status.Message = $"Successfully removed selected item at index: {selected} ";
+                StatusMessage.Text = $"Successfully removed selected item at index: {selected} ";
             }
             else
             {
-                this.Status.Message = "Cannot remove items that do not exist. ";
+                StatusMessage.Text = "Cannot remove items that do not exist. ";
             }
         }
 
