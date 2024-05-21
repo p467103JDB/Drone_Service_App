@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\GitHub Clones\\Drone_Service_App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F2C6C41C-D8C6-4DEF-A656-4582F101ADF9}|Drone Service Application\\Drone Service Application.csproj|d:\\github clones\\drone_service_app\\drone service application\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F2C6C41C-D8C6-4DEF-A656-4582F101ADF9}|Drone Service Application\\Drone Service Application.csproj|solutionrelative:drone service application\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F2C6C41C-D8C6-4DEF-A656-4582F101ADF9}|Drone Service Application\\Drone Service Application.csproj|d:\\github clones\\drone_service_app\\drone service application\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F2C6C41C-D8C6-4DEF-A656-4582F101ADF9}|Drone Service Application\\Drone Service Application.csproj|solutionrelative:drone service application\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2C6C41C-D8C6-4DEF-A656-4582F101ADF9}|Drone Service Application\\Drone Service Application.csproj|d:\\github clones\\drone_service_app\\drone service application\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F2C6C41C-D8C6-4DEF-A656-4582F101ADF9}|Drone Service Application\\Drone Service Application.csproj|solutionrelative:drone service application\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F2C6C41C-D8C6-4DEF-A656-4582F101ADF9}|Drone Service Application\\Drone Service Application.csproj|d:\\github clones\\drone_service_app\\drone service application\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,15 +58,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service Application\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Drone Service Application\\MainWindow.xaml.cs",
               "ToolTip": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service Application\\MainWindow.xaml.cs",
               "RelativeToolTip": "Drone Service Application\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAD0BAAAAAAAAAAAcwGwBAAAiAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAN0AAACIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T07:20:34.348Z"
+              "WhenOpened": "2024-05-19T07:20:34.348Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -106,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\GitHub Clones\\Drone_Service_App\\Drone Service Application\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Drone Service Application\\MainWindow.xaml",

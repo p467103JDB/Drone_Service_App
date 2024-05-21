@@ -17,8 +17,7 @@ namespace Drone_Service_Application
         public MainWindow()
         {
             InitializeComponent();
-
-            DataContext = this;
+            StatusMessage.Text = "Welcome";
         }
 
         // 6.2 Create list for finished items
@@ -220,7 +219,7 @@ namespace Drone_Service_Application
             }
         }
 
-        // 6.10 Force service fee to only accept double values with 2 decimal points - 6.6 is also covered here. // use regex
+        // 6.10 Force service fee to only accept double values with 2 decimal points - 6.6 is also covered here. // use regex next time <------------------------
         private double DoubleValidator()
         {
             double dubs = -1.00;
